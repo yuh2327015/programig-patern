@@ -54,5 +54,8 @@
 
 * 5. ReadMe.md 파일에 사용된 Mark Down 표기법 에대해서 헤더/목록(숫자)/순서없는목록(ex>*) / 들여쓰기 / 코드블럭 / 수평선 /링크 / 이미지/ 강조 
 에 대해 사용 방법을 정리해 오시오
+![마크다운1](https://github.com/yuh2327015/programig-patern/assets/127164406/7dd2ca93-5e2a-4164-9fa2-fe6e5c68a367)
+![마크다운2](https://github.com/yuh2327015/programig-patern/assets/127164406/4c628bf3-5ca3-4564-8605-639ebeaefbe9)
+![마크다운3](https://github.com/yuh2327015/programig-patern/assets/127164406/7f20b190-7eb9-4fa5-8c09-4ae8686deb97)
 
 
