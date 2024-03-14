@@ -18,7 +18,9 @@
 
      파일이 많아지면 용량을 많이 차지한다
 
-* 3. GIT을 이용하여 remote repository를 생성하고 git용 bash 로 local repository랑 연결하는 과정을 스크린샷과 함께 각 명령어의 자세한 설명을 작성하시오.
+* 3. GIT을 이용하여 remote repository를 생성하고 git용 bash 로 새로 initialize한 local repository랑 연결하는 과정을 스크린샷과 함께 각 명령어의 자세한 설명을 작성하시오. 이때 브랜치명은 main으로 합니다.
+
+
      
      ![git_1](https://github.com/yuh2327015/programig-patern/assets/127164406/6383bc3d-f310-453b-9a72-58158319a85d)
      - git status  :  파일 상태 확인하기
