@@ -19,7 +19,14 @@
      파일이 많아지면 용량을 많이 차지한다
 
 * 3. GIT을 이용하여 remote repository를 생성하고 git용 bash 로 새로 initialize한 local repository랑 연결하는 과정을 스크린샷과 함께 각 명령어의 자세한 설명을 작성하시오. 이때 브랜치명은 main으로 합니다.
+![연결과정1](https://github.com/yuh2327015/programig-patern/assets/127164406/a417a50a-2a37-4247-85ff-87258f95178b)
+    로컬 레포지토리 생성: 로컬 머신에 새로운 Git 레포지토리를 생성합니다. 원하는 디렉토리로 이동한 후 다음 명령어를 실행합니다.    
 
+![연결과정2](https://github.com/yuh2327015/programig-patern/assets/127164406/b05f86c0-e969-417e-926e-3624f9dd91d8)
+    새로운 리모트 저장소 연결: 로컬 레포지토리와 원격 저장소를 연결합니다. 원격 저장소의 URL은 GitHub, GitLab, 또는 기타 Git 호스팅 서비스에서 가져올 수 있습니다. 다음 명령어는 원격 저장소를 추가합니다.
+
+![연결과정3](https://github.com/yuh2327015/programig-patern/assets/127164406/950f65da-2811-4f2c-ad1b-1f037f83e2cb)
+    
 
      
    
