@@ -22,22 +22,7 @@
 
 
      
-     ![git_1](https://github.com/yuh2327015/programig-patern/assets/127164406/6383bc3d-f310-453b-9a72-58158319a85d)
-     - git status  :  파일 상태 확인하기
-
-     ![git_2](https://github.com/yuh2327015/programig-patern/assets/127164406/8acdf52a-d3a4-4c79-849d-d0ce766929b2)
-     - git add .  :   작업 디렉토리(working directory) 상의 변경 내용을 스테이징 영역(staging area)에 추가하기 위해서 사용하는 Git 명령어입니다.
-![git_3](https://github.com/yuh2327015/programig-patern/assets/127164406/1b0e0b21-6b56-4f4f-b170-74f278bb05ad)
-![git4](https://github.com/yuh2327015/programig-patern/assets/127164406/01778c75-92bd-4eca-b612-9ba63099a388)
-- git commit : commit을 함으로써 git에 저장을 한다. 또한 git에 저장을 함으로써 코드를 삭제, 변경하더라도 다시 이전의 상태로 되돌릴수가 있게 된다. 
-![git5](https://github.com/yuh2327015/programig-patern/assets/127164406/bf4e2d16-1089-4d18-843c-6e2b3e7e76a2)
-- git log  :  커밋 이력 상세 조회. 가장 최근의 커밋이 먼저 나오고 스페이스 바를 누르면 변경 이력이 하나씩 보여진다.
-
-![git6](https://github.com/yuh2327015/programig-patern/assets/127164406/8d2df2d0-8811-4984-9402-862ae6d3392d)
-![git7](https://github.com/yuh2327015/programig-patern/assets/127164406/2c777a63-6b5e-407f-8ab2-1d004e0ec79e)
-![git8](https://github.com/yuh2327015/programig-patern/assets/127164406/d2d49e4c-5aca-4d96-88a4-950223640a7d)
-![git9](https://github.com/yuh2327015/programig-patern/assets/127164406/e6c0b64b-f5aa-4194-bea2-003242ed0363)
-
+   
      
 * .gitignore 사용법과 작성방식 및 내용에 대해서 조사를 해 오시오.
 
