@@ -1,12 +1,4 @@
-﻿//과제물 프로젝트명: Lecture04_HW
-//idle : 화면색 검정색으로 clear
-//마우스 오른쪽 KeyDown하면 : 빨간색
-//마우스 오른쪽 KeyUp하면 : 원상복구
-//마우스 왼쪽 KeyDown하면 : 녹색
-//마우스 왼쪽 KeyUp하면 : 원상복구
-//마우스 오른쪽 KeyDown하고 드래그 중이면 : 파랑색
-//마우스 왼쪽 KeyDown하고 드래그 중이면 : 마젠타색
-#include <iostream>
+﻿#include <iostream>
 #pragma comment(lib, "Opengl32.lib")
 #include <GLFW/glfw3.h>
 
@@ -34,7 +26,6 @@ void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
 		if (action == GLFW_PRESS)
 		{
 			rightMouseDown = true;
-			rightMouseDragging = true;
 		}
 		else if (action == GLFW_RELEASE)
 		{
@@ -47,13 +38,24 @@ void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
 		if (action == GLFW_PRESS)
 		{
 			leftMouseDown = true;
-			leftMouseDragging = true;
 		}
 		else if (action == GLFW_RELEASE)
 		{
 			leftMouseDown = false;
 			leftMouseDragging = false;
 		}
+	}
+}
+
+void cursorPositionCallback(GLFWwindow* window, double xpos, double ypos)
+{
+	if (rightMouseDown)
+	{
+		rightMouseDragging = true;
+	}
+	else if (leftMouseDown)
+	{
+		leftMouseDragging = true;
 	}
 }
 
@@ -75,6 +77,7 @@ int main(void)
 	glfwSetErrorCallback(errorCallback);
 	glfwSetKeyCallback(window, keyCallback);
 	glfwSetMouseButtonCallback(window, mouseButtonCallback);
+	glfwSetCursorPosCallback(window, cursorPositionCallback);
 
 	while (!glfwWindowShouldClose(window))
 	{
@@ -83,12 +86,12 @@ int main(void)
 		{
 			glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
 		}
-		if (leftMouseDown)
+		else if (leftMouseDown)
 		{
 			glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
 		}
 		// 마우스 오른쪽 KeyDown하고 드래그 중이면 : 파랑색
-		if (rightMouseDown && rightMouseDragging)
+		else if (rightMouseDown && rightMouseDragging)
 		{
 			glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
 		}
