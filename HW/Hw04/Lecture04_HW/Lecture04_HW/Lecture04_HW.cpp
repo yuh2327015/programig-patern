@@ -6,6 +6,7 @@ bool rightMouseDown = false;
 bool leftMouseDown = false;
 bool rightMouseDragging = false;
 bool leftMouseDragging = false;
+int currentColor = 0; // 0: 검정, 1: 빨강, 2: 녹색, 3: 파랑, 4: 마젠타
 
 void errorCallback(int error, const char* description)
 {
@@ -27,12 +28,13 @@ void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
         if (action == GLFW_PRESS)
         {
             rightMouseDown = true;
-            rightMouseDragging = false;
+            currentColor = 1; // 빨간색
         }
         else if (action == GLFW_RELEASE)
         {
             rightMouseDown = false;
             rightMouseDragging = false;
+            currentColor = 0; // 검정색
         }
     }
     else if (button == GLFW_MOUSE_BUTTON_LEFT)
@@ -40,12 +42,13 @@ void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
         if (action == GLFW_PRESS)
         {
             leftMouseDown = true;
-            leftMouseDragging = false;
+            currentColor = 2; // 녹색
         }
         else if (action == GLFW_RELEASE)
         {
             leftMouseDown = false;
             leftMouseDragging = false;
+            currentColor = 0; // 검정색
         }
     }
 }
@@ -55,13 +58,20 @@ void cursorPosCallback(GLFWwindow* window, double xpos, double ypos)
     static double lastX = xpos;
     static double lastY = ypos;
 
-    if (rightMouseDown && (xpos != lastX || ypos != lastY))
-    {
-        rightMouseDragging = true;
-    }
-    else if (leftMouseDown && (xpos != lastX || ypos != lastY))
+    if (leftMouseDown && (xpos != lastX || ypos != lastY))
     {
         leftMouseDragging = true;
+        currentColor = 4; // 마젠타색
+    }
+    else if (rightMouseDown && (xpos != lastX || ypos != lastY))
+    {
+        rightMouseDragging = true;
+        currentColor = 3; // 파랑색
+    }
+    else
+    {
+        leftMouseDragging = false;
+        rightMouseDragging = false;
     }
 
     lastX = xpos;
@@ -90,25 +100,24 @@ int main(void)
     while (!glfwWindowShouldClose(window))
     {
         glfwPollEvents();
-        if (rightMouseDown && rightMouseDragging)
+
+        switch (currentColor)
         {
-            glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
-        }
-        else if (leftMouseDown && leftMouseDragging)
-        {
-            glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
-        }
-        else if (rightMouseDown)
-        {
-            glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
-        }
-        else if (leftMouseDown)
-        {
-            glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
-        }
-        else
-        {
-            glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        case 1:
+            glClearColor(1.0f, 0.0f, 0.0f, 1.0f); // 빨강색
+            break;
+        case 2:
+            glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // 녹색
+            break;
+        case 3:
+            glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // 파랑색
+            break;
+        case 4:
+            glClearColor(1.0f, 0.0f, 1.0f, 1.0f); // 마젠타색
+            break;
+        default:
+            glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // 검정색
+            break;
         }
 
         glClear(GL_COLOR_BUFFER_BIT);
