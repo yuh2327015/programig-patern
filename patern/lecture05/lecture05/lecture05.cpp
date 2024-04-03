@@ -20,9 +20,17 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 	{
 		moveFactor += 0.01f;
 	}
+	if (key == GLFW_KEY_DOWN && action == GLFW_PRESS)
+	{
+		moveFactor -= 0.01f;
+	}
 	if (key == GLFW_KEY_RIGHT && action == GLFW_PRESS)
 	{
 		scaleFactor += 0.1f;
+	}
+	if (key == GLFW_KEY_LEFT && action == GLFW_PRESS)
+	{
+		scaleFactor -= 0.1f;
 	}
 }
 
