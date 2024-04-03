@@ -1,8 +1,4 @@
 ﻿#include <iostream>
-<<<<<<< HEAD
-#pragma comment(lib, "Opengl32.lib")
-=======
->>>>>>> d62b8cf807520be61c307e99cc80450e7a0cec0a
 #include <GLFW/glfw3.h>
 #pragma comment(lib, "Opengl32.lib")
 
@@ -27,32 +23,6 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 
 void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
 {
-<<<<<<< HEAD
-	if (button == GLFW_MOUSE_BUTTON_RIGHT)
-	{
-		if (action == GLFW_PRESS)
-		{
-			rightMouseDown = true;
-		}
-		else if (action == GLFW_RELEASE)
-		{
-			rightMouseDown = false;
-			rightMouseDragging = false;
-		}
-	}
-	else if (button == GLFW_MOUSE_BUTTON_LEFT)
-	{
-		if (action == GLFW_PRESS)
-		{
-			leftMouseDown = true;
-		}
-		else if (action == GLFW_RELEASE)
-		{
-			leftMouseDown = false;
-			leftMouseDragging = false;
-		}
-	}
-=======
     if (button == GLFW_MOUSE_BUTTON_RIGHT)
     {
         if (action == GLFW_PRESS)
@@ -106,19 +76,6 @@ void cursorPosCallback(GLFWwindow* window, double xpos, double ypos)
 
     lastX = xpos;
     lastY = ypos;
->>>>>>> d62b8cf807520be61c307e99cc80450e7a0cec0a
-}
-
-void cursorPositionCallback(GLFWwindow* window, double xpos, double ypos)
-{
-	if (rightMouseDown)
-	{
-		rightMouseDragging = true;
-	}
-	else if (leftMouseDown)
-	{
-		leftMouseDragging = true;
-	}
 }
 
 int main(void)
@@ -129,44 +86,6 @@ int main(void)
     GLFWwindow* window;
     window = glfwCreateWindow(1280, 768, "WSYEngine", NULL, NULL);
 
-<<<<<<< HEAD
-	if (!window)
-	{
-		glfwTerminate();
-		return -1;
-	}
-	glfwMakeContextCurrent(window);
-	glfwSetErrorCallback(errorCallback);
-	glfwSetKeyCallback(window, keyCallback);
-	glfwSetMouseButtonCallback(window, mouseButtonCallback);
-	glfwSetCursorPosCallback(window, cursorPositionCallback);
-
-	while (!glfwWindowShouldClose(window))
-	{
-		glfwPollEvents();
-		if (rightMouseDown)
-		{
-			glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
-		}
-		else if (leftMouseDown)
-		{
-			glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
-		}
-		// 마우스 오른쪽 KeyDown하고 드래그 중이면 : 파랑색
-		else if (rightMouseDown && rightMouseDragging)
-		{
-			glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
-		}
-		// 마우스 왼쪽 KeyDown하고 드래그 중이면 : 마젠타색
-		else if (leftMouseDown && leftMouseDragging)
-		{
-			glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
-		}
-		else
-		{
-			glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-		}
-=======
     if (!window)
     {
         glfwTerminate();
@@ -181,7 +100,6 @@ int main(void)
     while (!glfwWindowShouldClose(window))
     {
         glfwPollEvents();
->>>>>>> d62b8cf807520be61c307e99cc80450e7a0cec0a
 
         switch (currentColor)
         {
