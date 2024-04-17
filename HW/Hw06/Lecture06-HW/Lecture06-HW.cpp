@@ -37,16 +37,16 @@ int main(void)
     glfwSetErrorCallback(errorCallback);
     glfwSetKeyCallback(window, keyCallback);
 
- 
+
     MSList starList;
 
-   
+
     while (!glfwWindowShouldClose(window))
     {
         glfwPollEvents();
 
         starList.renderAllStars();
-        
+
         glfwSwapBuffers(window);
     }
 
