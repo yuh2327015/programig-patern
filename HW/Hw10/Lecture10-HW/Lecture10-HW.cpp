@@ -47,8 +47,8 @@ void drawSmallCircle(float cx, float cy, float r, int num_segments, double angle
 {
     // 작은 원의 위치 계산 (크기는 처음 그려지는 원의 1/3 크기)
     float small_radius = r * 0.33f;
-    float newX = cx + r * cos(angle);
-    float newY = cy + r * sin(angle);
+    float newX = cx -0.19 * cos(angle);
+    float newY = cy -0.19 * sin(angle);
 
     // 작은 원 그리기
     glColor3f(1.0f, 0.999f, 0.0f); // 황금색
@@ -107,19 +107,33 @@ void drawSquare(float size, double angle)
     glEnd();
 
     // 별 그리기
-    glColor3f(1.0f, 1.0f, 0.0f); // 노란색
-    glBegin(GL_POLYGON); // 채워진 별
-    glVertex2f(newX3 + 0.09f, newY3 + 0.05f); // 별의 첫 번째 점
-    glVertex2f(newX3, newY3 + 0.1f); // 별의 두 번째 점
-    glVertex2f(newX3 + 0.1f, newY3 + 0.1f); // 별의 세 번째 점
-    glVertex2f(newX3 + 0.15f, newY3 + 0.2f); // 별의 네 번째 점
-    glVertex2f(newX3 + 0.2f, newY3 + 0.1f); // 별의 다섯 번째 점
-    glVertex2f(newX3 + 0.3f, newY3 + 0.1f); // 별의 여섯 번째 점
-    glVertex2f(newX3 + 0.225f, newY3 + 0.05f); // 별의 일곱 번째 점
-    glVertex2f(newX3 + 0.25f, newY3 - 0.05f); // 별의 여덟 번째 점
-    glVertex2f(newX3 + 0.175f, newY3 - 0.025f); // 별의 아홉 번째 점
-    glVertex2f(newX3 + 0.15f, newY3 - 0.025f); // 별의 열 번째 점
-    glVertex2f(newX3 + 0.075f, newY3 - 0.05f); // 별의 열 하나 번째 점
+    glColor3f(1.0f, 1.0f, 0.0f); 
+    glBegin(GL_POLYGON); 
+    glVertex2f(newX3 + 0.09f, newY3 + 0.05f); 
+    glVertex2f(newX3, newY3 + 0.1f); 
+    glVertex2f(newX3 + 0.1f, newY3 + 0.1f);
+    glVertex2f(newX3 + 0.15f, newY3 + 0.2f);
+    glVertex2f(newX3 + 0.2f, newY3 + 0.1f); 
+    glVertex2f(newX3 + 0.3f, newY3 + 0.1f);
+    glVertex2f(newX3 + 0.225f, newY3 + 0.05f); 
+    glVertex2f(newX3 + 0.25f, newY3 - 0.05f); 
+    glVertex2f(newX3 + 0.175f, newY3 - 0.025f);
+    glVertex2f(newX3 + 0.15f, newY3 - 0.025f); 
+    glVertex2f(newX3 + 0.075f, newY3 - 0.05f); 
+    glEnd();
+
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glVertex2f(newX3 + 0.09f, newY3 + 0.05f);
+    glVertex2f(newX3, newY3 + 0.1f);
+    glVertex2f(newX3 + 0.1f, newY3 + 0.1f);
+    glVertex2f(newX3 + 0.15f, newY3 + 0.2f);
+    glVertex2f(newX3 + 0.2f, newY3 + 0.1f);
+    glVertex2f(newX3 + 0.3f, newY3 + 0.1f);
+    glVertex2f(newX3 + 0.225f, newY3 + 0.05f);
+    glVertex2f(newX3 + 0.25f, newY3 - 0.05f);
+    glVertex2f(newX3 + 0.175f, newY3 - 0.025f);
+    glVertex2f(newX3 + 0.15f, newY3 - 0.025f);
+    glVertex2f(newX3 + 0.075f, newY3 - 0.05f);
     glEnd();
 }
 
