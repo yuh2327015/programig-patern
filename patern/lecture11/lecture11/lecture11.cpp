@@ -1,5 +1,4 @@
 ﻿#pragma comment(lib, "Opengl32.lib")
-
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <cmath>
@@ -8,24 +7,25 @@ float moveFactor = 0.0f;
 float scaleFactor = 1.0f;
 const float M_PI = 3.14159265358979323846f;
 
-float SunAngle = 0;
-float Big_angle = 130;
-float Small_angle = 240;
-float EarthRotateAngle = 0;
-float EarthOrbitAngle = 0;
-float StarRotationAngle = 0;
-float StarOrbitAngle = 0;
-
-float SunRotation = 360.0f / 30.0f;
-float EarthRotation = 360.0f / 10.0f;
-float EarthOrbit = 360.0f / 60.0f;
-float StarRotateOrbit = 360.0f / 3.0f;
-double previousTime = 0.0;
-
-
 void errorCallback(int error, const char* description)
 {
     std::cerr << "GLFW Error: " << description << std::endl;
+}
+
+void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+    {
+        glfwSetWindowShouldClose(window, GLFW_TRUE);
+    }
+    if (key == GLFW_KEY_UP && action == GLFW_PRESS)
+    {
+        moveFactor += 0.01f;
+    }
+    if (key == GLFW_KEY_RIGHT && action == GLFW_PRESS)
+    {
+        scaleFactor += 0.1f;
+    }
 }
 
 int setVertexRotation(float x, float y, float angle_degree)
@@ -54,6 +54,20 @@ int setVertexStarRotation(float x, float y, float orbit_angle_degree, float rota
     glVertex2f(orbit_x + x * cos(rotate_angle) - (y * sin(rotate_angle)), orbit_y + x * sin(rotate_angle) + (y * cos(rotate_angle)));
     return 0;
 }
+
+float SunAngle = 0;
+float Big_angle = 130;
+float Small_angle = 240;
+float EarthRotateAngle = 0;
+float EarthOrbitAngle = 0;
+float StarRotationAngle = 0;
+float StarOrbitAngle = 0;
+
+float SunRotation = 360.0f / 30.0f;
+float EarthRotation = 360.0f / 10.0f;
+float EarthOrbit = 360.0f / 60.0f;
+float StarRotateOrbit = 360.0f / 3.0f;
+double previousTime = 0.0;
 
 int render(float deltaTime)
 {
@@ -176,7 +190,7 @@ int main(void)
         return -1;
 
     GLFWwindow* window;
-    window = glfwCreateWindow(1000, 1000, "202327015WSY", NULL, NULL);
+    window = glfwCreateWindow(1000, 1000, "MuSoeunEngine", NULL, NULL);
 
     if (!window)
     {
@@ -195,7 +209,7 @@ int main(void)
         float deltaTime = static_cast<float>(currentTime - previousTime);
         previousTime = currentTime;
         glfwPollEvents();
-        glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+        glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         render(deltaTime);
         glfwSwapBuffers(window);

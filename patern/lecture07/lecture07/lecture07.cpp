@@ -8,13 +8,6 @@
 float moveFactor = 0.0f;
 float scaleFactor = 1.0f;
 
-struct star
-{
-	float posx, posy, posz;
-	float r, g, b;
-	float size;
-};
-
 void errorCallback(int error, const char* description)
 {
 	std::cerr << "\033[1;31mGLFW Error: " << description << "\033[0m" << std::endl;
@@ -80,12 +73,29 @@ int render()
 	return 0;
 }
 
+struct star
+{
+	float posx, posy, posz;
+	float r, g, b;
+	float size;
+	void* draw;
+};
+
+void draw()
+{
+	
+}
+
 int main(void)
 {
+	
+
 	//glfw라이브러리 초기화
 	if (!glfwInit())
 		return -1;
 
+	struct star s1 = {};
+	
 	GLFWwindow* window;
 	window = glfwCreateWindow(1280, 768, "MuSoeunEngine", NULL, NULL);
 
