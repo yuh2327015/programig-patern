@@ -186,7 +186,6 @@ int main(void)
 
     glfwMakeContextCurrent(window);
     glfwSetErrorCallback(errorCallback);
-    glfwSetKeyCallback(window, keyCallback);
     previousTime = glfwGetTime();
 
     while (!glfwWindowShouldClose(window))
