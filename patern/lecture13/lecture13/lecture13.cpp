@@ -12,7 +12,7 @@ struct Player {
 };
 
 // 전역 변수
-Player player = {0.0f, -0.8f, 0.0f, 0.0f, false}; // 초기 플레이어 위치 및 상태
+Player player = {0.0f, -0.78f, 0.0f, 0.0f, false}; // 초기 플레이어 위치 및 상태
 const float gravity = -0.001f;                    // 중력 가속도
 const float jumpVelocity = 0.02f;                 // 점프 초기 속도
 const float moveSpeed = 0.01f;                    // 이동 속도
