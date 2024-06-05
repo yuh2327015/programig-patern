@@ -2,6 +2,8 @@
 
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <chrono>
+#include <cmath>
 
 // 플레이어의 상태를 나타내는 구조체
 struct Player {
@@ -12,10 +14,10 @@ struct Player {
 };
 
 // 전역 변수
-Player player = {0.0f, -0.78f, 0.0f, 0.0f, false}; // 초기 플레이어 위치 및 상태
-const float gravity = -0.001f;                    // 중력 가속도
-const float jumpVelocity = 0.02f;                 // 점프 초기 속도
-const float moveSpeed = 0.01f;                    // 이동 속도
+Player player = { -0.6f, -0.78f, 0.0f, 0.0f, false }; // 초기 플레이어 위치 및 상태
+const float gravity = -0.00981f;                    // 중력 가속도 (픽셀/frame², 9.8 m/s²를 픽셀/frame²로 변환한 값)
+const float jumpVelocity = 0.085f;                 // 점프 초기 속도 (픽셀/frame, 2미터 점프 높이에 해당하는 속도)
+const float moveSpeed = 0.01f;                    // 이동 속도 (픽셀/frame)
 
 // 바닥의 위치와 크기
 const float floorY = -0.9f;
@@ -38,9 +40,11 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 
     if (key == GLFW_KEY_LEFT && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
         player.velocityX = -moveSpeed;
-    } else if (key == GLFW_KEY_RIGHT && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+    }
+    else if (key == GLFW_KEY_RIGHT && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
         player.velocityX = moveSpeed;
-    } else if ((key == GLFW_KEY_LEFT || key == GLFW_KEY_RIGHT) && action == GLFW_RELEASE) {
+    }
+    else if ((key == GLFW_KEY_LEFT || key == GLFW_KEY_RIGHT) && action == GLFW_RELEASE) {
         player.velocityX = 0.0f;
     }
 }
