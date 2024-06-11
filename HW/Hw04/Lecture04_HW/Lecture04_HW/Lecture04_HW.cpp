@@ -1,6 +1,6 @@
 ﻿#include <iostream>
-#include <GLFW/glfw3.h>
 #pragma comment(lib, "Opengl32.lib")
+#include <GLFW/glfw3.h>
 
 bool rightMouseDown = false;
 bool leftMouseDown = false;
