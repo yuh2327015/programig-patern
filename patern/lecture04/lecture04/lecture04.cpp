@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #pragma comment(lib, "Opengl32.lib")
+
 #include <GLFW/glfw3.h>
 
 void errorCallback(int error, const char* description)
