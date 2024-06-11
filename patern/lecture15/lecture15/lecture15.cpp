@@ -6,7 +6,7 @@ using namespace std;
 
 void Eventhandler()
 {
-    cout << "끄아아아악" << endl;
+    cout << "함수포인터" << endl;
 }
 
 int main()
